@@ -1,0 +1,256 @@
+header {
+  width: 100%;
+  max-width: 1439px;
+  background-color: white;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+#logo {
+  height: 100%;
+}
+#logo a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#logo svg {
+  fill: #1bb2dd;
+  margin: 1.125rem 0;
+}
+#logoFull {
+  width: 135px;
+}
+
+#logo a#logoHalf {
+  display: none;
+}
+
+#apply-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  border: 1px solid black;
+  background-color: white;
+  font-weight: 400;
+  font-size: 15px;
+  /* margin: 0.5rem 0; */
+}
+
+#menu-links {
+  width: 100%;
+  order: 3;
+  background-color: white;
+  border-top: 2px solid rgb(248, 246, 244);
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+#menu-links li {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+#menu-links li svg {
+  fill: black;
+  width: 16px;
+  margin-left: -16px;
+  display: none;
+}
+#menu-links li svg.rotate {
+  transform: rotate(180deg);
+}
+
+p.menu-title {
+  font-size: 13px;
+  margin: 13px 2rem 13px 0;
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+}
+#menu-links li:hover p.menu-title {
+  border-bottom: 1px solid black;
+}
+#menu-links li p::after {
+  opacity: 0;
+  transition: 100ms;
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  background-color: rgb(255, 101, 45);
+  position: absolute;
+  bottom: -0.875rem;
+  left: 0;
+  z-index: 10;
+}
+#menu-links li.selected p::after {
+  opacity: 1;
+}
+div.menu {
+  position: fixed;
+  top: 116px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.1);
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 1000ms;
+  display: none;
+}
+div.menu.showing {
+  display: block;
+  opacity: 1;
+}
+ul.menu-items {
+  background-color: white;
+  padding: 1rem 0;
+  width: 100%;
+}
+#menu-links ul.menu-items li {
+  background-color: white;
+  justify-content: flex-start;
+  padding: 0.625rem 2rem;
+}
+#menu-links ul.menu-items li.title {
+  color: #777;
+  font-size: 12px;
+  padding-bottom: 0.25rem;
+  padding-left: 0;
+  margin: 0 2rem;
+  border-bottom: 1px solid #aaa;
+}
+#menu-links ul.menu-items li:not(.title):hover {
+  background-color: rgb(237, 249, 255);
+}
+@media (min-width: 600px) {
+  header {
+    padding: 0 1.5rem;
+  }
+  #apply-btn {
+    margin: 24px 0;
+    padding: 0.75rem 1rem;
+  }
+  div.menu {
+    top: 144px;
+  }
+}
+@media (min-width: 768px) {
+  header {
+    padding: 0 2.5rem;
+  }
+  #menu-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    order: 2;
+    width: auto;
+    border: none;
+    height: 104px;
+  }
+  #logo svg {
+    margin: 24px 0;
+  }
+  #logo a#logoFull {
+    display: none;
+  }
+  #logo a#logoHalf {
+    display: block;
+    margin-right: 55px;
+    width: 48px;
+  }
+  #menu-links > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms;
+    height: 100%;
+  }
+  #menu-links li svg {
+    display: inline-block;
+  }
+  p.menu-title {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 24px;
+    margin: 0 1.875rem;
+  }
+  #menu-links li.selected p.menu-title::after {
+    opacity: 0;
+  }
+  #menu-links li::before {
+    content: "";
+    height: 1rem;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(255, 101, 45);
+    transition: 100ms;
+    opacity: 0;
+  }
+  #menu-links li.selected::before {
+    opacity: 1;
+  }
+  #apply {
+    order: 3;
+  }
+  div.menu {
+    position: absolute;
+    background-color: transparent;
+    top: 104px;
+    left: 0;
+    width: 100%;
+  }
+  ul.menu-items {
+    min-width: 250px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    padding: 0 80px;
+    height: 96px;
+  }
+
+  #logo a#logoFull {
+    display: block;
+    width: 203px;
+    margin-right: 80px;
+  }
+  #logo a#logoHalf {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  header {
+    height: 104px;
+  }
+  #logo a#logoFull {
+    width: 236px;
+    margin-right: 234px;
+  }
+  p.menu-title {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 18px;
+    height: 24px;
+    margin: 0 1.875rem;
+  }
+  #menu-links li svg {
+    margin-top: 8px;
+  }
+}

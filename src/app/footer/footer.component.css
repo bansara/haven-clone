@@ -1,0 +1,187 @@
+footer {
+  width: 100%;
+  max-width: 100%;
+  background-color: white;
+  padding: 0 1rem 3rem;
+  z-index: 10;
+  position: relative;
+}
+footer svg {
+  width: 170px;
+  margin: 2.125rem 0;
+}
+.footer-container {
+  border-top: 1px solid #888;
+}
+.footer-flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  grid-gap: 32px;
+  grid-auto-flow: dense;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.footer-header {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0.375rem 0;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+.footer-col.resources {
+  display: flex;
+  flex-direction: row;
+  grid-column: span 2;
+}
+.social-links svg {
+  width: 28px;
+  margin: 1rem 1.5rem 1rem 0;
+  display: inline-block;
+}
+#subscribe-email {
+  padding: 0.5rem 0.5rem;
+  height: 3rem;
+  width: 15rem;
+  margin: 0 1.5rem 0 0;
+}
+#subscribe-email::placeholder {
+  color: #aaa;
+}
+#subscribe-btn {
+  padding: 0.5rem 2rem;
+  height: 3rem;
+  color: white;
+  background-color: black;
+  border-radius: 2rem;
+  display: inline-block;
+}
+.subscribe-form {
+  display: flex;
+  margin: 0.5rem 0;
+}
+.footer-group-2 {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3;
+}
+.footer-account-social,
+.subscribe {
+  width: 100%;
+}
+.footer-account-social {
+  display: flex;
+}
+.footer-account-social div {
+  flex: 1;
+}
+.legal {
+  padding-top: 2rem;
+}
+.legal p {
+  color: #777;
+  font-size: 13px;
+  margin: 0.75rem 0;
+}
+.end-section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.end-section-right {
+  background-image: url("https://seal-newyork.bbb.org/logo/ruhzbus/bbb-152273.png");
+  width: 100px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.end-section a {
+  color: #777;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 13px;
+}
+.end-section a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .footer-group-2 {
+    flex-direction: row;
+    grid-column: span 4;
+  }
+  .footer-account-social,
+  .subscribe {
+    width: 100%;
+  }
+  .footer-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-col.resources {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    max-width: 1439px;
+    margin: 0 auto;
+    padding: 0 2.5rem 3rem;
+  }
+  footer svg {
+    width: 200px;
+    margin: 2rem 0;
+  }
+  .footer-container {
+    max-width: 1279px;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+  .footer-group-2 {
+    flex-direction: row;
+    grid-column: span 4;
+  }
+  .footer-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-account-social,
+  .subscribe {
+    width: 50%;
+  }
+  /* .span {
+    grid-column: span;
+  } */
+}
+@media (min-width: 1280px) {
+  .footer-links {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .footer-group-2 {
+    grid-column: span 2;
+    flex-direction: column;
+  }
+  .footer-account-social,
+  .subscribe {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .footer-account-social {
+    flex-direction: row;
+  }
+}

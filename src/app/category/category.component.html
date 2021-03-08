@@ -1,0 +1,13 @@
+<article class="category-section" id="{{ category.name.split(' ')[0] }}">
+  <p class="category-name" [attr.data-section]="category.name">
+    {{ category.name | uppercase }}
+  </p>
+  <div class="category-item" *ngFor="let article of category.articles">
+    <img
+      *ngIf="article.imgSrc"
+      src="{{ article.imgSrc }}"
+      alt="{{ article.title }}"
+    />
+    <a href="#">{{ article.title }}</a>
+  </div>
+</article>
