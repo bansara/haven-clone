@@ -1,15 +1,15 @@
 main {
   max-width: 100%;
   background-color: rgb(251, 250, 248);
-  margin: 104px auto 0;
-  padding: 1rem;
+  margin: 115px auto 0;
+  padding: 64px 1.5rem;
   /* display: grid;
   grid-template-columns: 15% 1fr; */
 }
 #main-content-header {
   font-size: 1.75rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
 }
 .section-links {
   display: none;
@@ -23,6 +23,9 @@ main {
 }
 
 @media (min-width: 768px) {
+  main {
+    margin-top: 104px;
+  }
   #main-content-header {
     font-size: 3rem;
   }
@@ -49,11 +52,17 @@ main {
   main {
     display: grid;
     grid-template-columns: 14% 1fr;
+    margin-top: 96px;
   }
   .section-links {
     display: block;
   }
   #main-content-header {
     font-size: 3.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  main {
+    margin-top: 104px;
   }
 }

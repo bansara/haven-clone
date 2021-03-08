@@ -14,10 +14,7 @@ export class NavbarComponent implements OnInit {
     this.showMenu = this.selected.length ? true : false;
   }
   showMenu: boolean = false;
-  hideMenu() {
-    this.selected = '';
-    this.showMenu = false;
-  }
+
   constructor() {}
 
   ngOnInit(): void {

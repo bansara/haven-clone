@@ -11,7 +11,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   flex-wrap: wrap;
 }
 #logo {
@@ -107,7 +107,7 @@ div.menu {
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.1);
   opacity: 0;
-  z-index: 100;
+  z-index: 5;
   transition: opacity 1000ms;
   display: none;
 }
@@ -115,10 +115,20 @@ div.menu.showing {
   display: block;
   opacity: 1;
 }
-ul.menu-items {
+#menu-links li.selected ul {
+  position: fixed;
+  top: 116px;
+  left: 0;
+  right: 0;
+  min-width: 250px;
+  z-index: 10;
   background-color: white;
   padding: 1rem 0;
   width: 100%;
+  display: block;
+}
+ul.menu-items {
+  display: none;
 }
 #menu-links ul.menu-items li {
   background-color: white;
@@ -144,7 +154,8 @@ ul.menu-items {
     margin: 24px 0;
     padding: 0.75rem 1rem;
   }
-  div.menu {
+  div.menu,
+  #menu-links li.selected ul {
     top: 144px;
   }
 }
@@ -209,14 +220,15 @@ ul.menu-items {
     order: 3;
   }
   div.menu {
-    position: absolute;
     background-color: transparent;
+    box-shadow: none;
+    top: 104px;
+  }
+  #menu-links li.selected ul {
+    position: absolute;
     top: 104px;
     left: 0;
-    width: 100%;
-  }
-  ul.menu-items {
-    min-width: 250px;
+    width: 250px;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
   }
 }
@@ -225,7 +237,9 @@ ul.menu-items {
     padding: 0 80px;
     height: 96px;
   }
-
+  #menu-links {
+    height: 96px;
+  }
   #logo a#logoFull {
     display: block;
     width: 203px;
@@ -234,10 +248,17 @@ ul.menu-items {
   #logo a#logoHalf {
     display: none;
   }
+  #menu-links li.selected ul {
+    top: 96px;
+  }
 }
 @media (min-width: 1440px) {
-  header {
+  header,
+  #menu-links {
     height: 104px;
+  }
+  #menu-links li.selected ul {
+    top: 104px;
   }
   #logo a#logoFull {
     width: 236px;
