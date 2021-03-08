@@ -17,21 +17,22 @@ header {
 #logo {
   height: 100%;
 }
-#logo a {
+#logo div {
   height: 100%;
   display: flex;
   align-items: center;
 }
 
 #logo svg {
+  display: block;
   fill: #1bb2dd;
   margin: 1.125rem 0;
 }
-#logoFull {
+#logoFull svg {
   width: 135px;
 }
 
-#logo a#logoHalf {
+#logo div#logoHalf {
   display: none;
 }
 
@@ -42,7 +43,7 @@ header {
   background-color: white;
   font-weight: 400;
   font-size: 15px;
-  /* margin: 0.5rem 0; */
+  margin: 0.5rem 0;
 }
 
 #menu-links {
@@ -175,13 +176,13 @@ ul.menu-items {
   #logo svg {
     margin: 24px 0;
   }
-  #logo a#logoFull {
+  #logo div#logoFull {
     display: none;
   }
-  #logo a#logoHalf {
+  #logo div#logoHalf {
+    width: 48px;
     display: block;
     margin-right: 55px;
-    width: 48px;
   }
   #menu-links > li {
     display: flex;
@@ -240,12 +241,15 @@ ul.menu-items {
   #menu-links {
     height: 96px;
   }
-  #logo a#logoFull {
+
+  #logo div#logoFull {
     display: block;
-    width: 203px;
     margin-right: 80px;
   }
-  #logo a#logoHalf {
+  #logo div#logoFull svg {
+    width: 203px;
+  }
+  #logo div#logoHalf {
     display: none;
   }
   #menu-links li.selected ul {
@@ -260,9 +264,11 @@ ul.menu-items {
   #menu-links li.selected ul {
     top: 104px;
   }
-  #logo a#logoFull {
-    width: 236px;
+  #logo div#logoFull {
     margin-right: 234px;
+  }
+  #logo div#logoFull svg {
+    width: 236px;
   }
   p.menu-title {
     display: inline-block;
