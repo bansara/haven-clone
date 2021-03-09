@@ -44,6 +44,15 @@ header {
   font-weight: 400;
   font-size: 15px;
   margin: 0.5rem 0;
+  position: relative;
+  z-index: 200;
+}
+
+#apply-btn:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+#apply-btn:hover span {
+  border-bottom: 1px solid black;
 }
 
 #menu-links {
@@ -66,6 +75,7 @@ header {
 #menu-links li svg {
   fill: black;
   width: 16px;
+  height: 16px;
   margin-left: -16px;
   display: none;
 }
@@ -191,17 +201,24 @@ ul.menu-items {
     align-items: center;
     justify-content: center;
     transition: 150ms;
+    padding: 1rem;
     height: 100%;
   }
+  #menu-links li > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #menu-links li svg {
-    display: inline-block;
+    display: block;
+    height: 16px;
   }
   p.menu-title {
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
     font-size: 15px;
     height: 24px;
-    margin: 0 1.875rem;
+    /* margin: 0 1.875rem; */
   }
   #menu-links li.selected p.menu-title::after {
     opacity: 0;
@@ -243,6 +260,9 @@ ul.menu-items {
   #menu-links {
     height: 96px;
   }
+  #menu-links li {
+    padding: 0 0.875rem;
+  }
   #menu-links li::before {
     top: -1px;
   }
@@ -279,9 +299,12 @@ ul.menu-items {
     box-sizing: border-box;
     font-size: 18px;
     height: 24px;
-    margin: 0 1.875rem;
+    /* margin: 0 1.875rem; */
   }
   #menu-links li svg {
     margin-top: 8px;
+  }
+  #apply-btn {
+    padding: 0.75rem 2rem;
   }
 }
