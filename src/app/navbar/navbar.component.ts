@@ -8,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   selected: string = '';
   setSelectedMenu(name: string, svg: string) {
-    const chevron = document.getElementById(svg);
-    chevron.classList.toggle('rotate');
+    const allChevrons = document.querySelectorAll('.chevron');
+    allChevrons.forEach((chevron) => chevron.classList.remove('rotate'));
     this.selected = this.selected === name ? '' : name;
     this.showMenu = this.selected.length ? true : false;
+    const chevron = document.getElementById(svg);
+    if (this.selected === name) {
+      chevron.classList.add('rotate');
+    } else {
+      chevron.classList.remove('rotate');
+    }
   }
   showMenu: boolean = false;
 
